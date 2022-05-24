@@ -22,6 +22,10 @@ int main(){
 
     printf("valor de pow é: ");
     printf("%i\n", result);
+    
+    int result_2 = numero*;
+    printf("\nvalor de pow é: ");
+    printf("%i\n", result_2);
 
     return(0);
     
