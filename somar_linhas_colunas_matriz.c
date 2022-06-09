@@ -46,5 +46,3 @@ int main(void){
 
   return(0);
 }
-
-// somar_linhas_colunas_matriz

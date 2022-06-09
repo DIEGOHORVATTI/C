@@ -1,16 +1,22 @@
 #include <stdio.h>
 
+/* faça uma função que retorna dois valores de um vetor de 5...1 sendo os parametros um maior e outro menor */
+
+
+
 int main(void){
   
-  /* int valor_1 = 1;  //valor
-  int *valor_2;     //ponteiro
-  valor_2 = &valor_1;
-  printf("Valor valor_1: %d\n", valor_1);      //valor de valor_1
-  printf("\nMemória valor_1: %p\n", &valor_1); //endereço de valor_1
-  printf("\nMemória valor_1: %p\n", valor_2);  //endereço de valor_1 apontado
-  printf("\nValor valor_1: %d\n", *valor_2);   //valor valor_2 apontado
-  printf("\nMemória valor_2: %p\n", &valor_2); //endereço de valor_2
- */
+  int lol=4;
+  int *lol_memoria;
+  lol_memoria = &lol;
+
+  printf(" valor real de lol: %d", lol);
+  printf("\n valor de memória de lol: %p", &lol);
+
+  printf("\n\n memória de lol_memoria: %p", &lol_memoria);
+  printf("\n valor de memória de lol(referenciado): %d", *lol_memoria);
+
+  printf("\n\n valor de memória de lol(referenciado): %p", *lol_memoria);
 
   return(0);
 }

@@ -26,7 +26,7 @@ int main(){
   printf( "=> %d\n", 5+9+7+2 );
 
   //b)
-  printf( "=> %d\n", 1-4*3/6 );
+  printf( "=> %d\n", 1-4*3/6 ); 
 
   /* int c = pot(2,3);
   printf( "pot(a,b) = %d\n", c); */
