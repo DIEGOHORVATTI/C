@@ -8,9 +8,7 @@
   5 - media >= 7 aprovado
 */
 
-float calc( float n1, float n2, float n3, float n4 ){
-  
-  float soma = ( (n1+n2+n3+n4) / 4 );
+float resultado( float soma ){
 
   printf("\nA média foi de %.1f\n", soma);
 
@@ -20,6 +18,12 @@ float calc( float n1, float n2, float n3, float n4 ){
     printf("Aluno reprovado\n");
   }
 }
+
+float soma( float n1, float n2, float n3, float n4 ){
+  
+  resultado( (n1+n2+n3+n4) / 4 );
+}
+
 
 int main(void){
   
@@ -35,7 +39,7 @@ int main(void){
     printf("Nota 4: ");
     scanf("%f", &n4);
 
-    calc( n1, n2, n3, n4);
+    soma( n1, n2, n3, n4);
   }
 
   return(0);
