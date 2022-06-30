@@ -2,19 +2,20 @@
 
 int main(void){
 
-  //EM = Endereço Memória
+  // O ponteiro é uma variavel que amarzena um endereço de memória
   
-  int lol=4;
-  int *lol_memoria;
-  lol_memoria = &lol;
+  // & = Endereço Memória => onde fica o endereço em si 
+  // p = ponteiro         => pode amarzenar muitos endereços
 
-  printf(" lol: %d", lol);
-  printf("\n lol EM: %p", &lol);
-/* 
-  printf("\n\n memória de lol_memoria: %p", &lol_memoria);
-  printf("\n valor de memória de lol(referenciado): %d", *lol_memoria);
+  int num=4;
+  int *num_;
+  num_ = &num;
 
-  printf("\n\n valor de memória de lol(referenciado): %p", *lol_memoria);
- */
+  printf(" num valor ----------: %d\n", num); // num valor
+  printf(" num memória --------: %p\n", &num); // num memória
+  printf(" num_ valor----------: %p\n", num_); // valor de memória do num
+  printf(" num_ memória -------: %p\n", &num_); // valor da memória do num_
+  printf(" num_ apontado ------: %d\n", *num_); //  conteudo apontado para ponteiro
+
   return(0);
 }

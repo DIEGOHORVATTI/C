@@ -6,6 +6,7 @@ typedef struct{
 
 typedef struct{
   sApelido nick;
+  
   char nome[50],
     sexo[3],
     dataNacimento[12];
