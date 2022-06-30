@@ -65,7 +65,7 @@ void imprimirPessoa(sPessoa pessoa){
     printf("%s", "\nErro: sexo invalido");
   }else{
     // verifica é macho caso sim retorna peso com formula de macho caso contrario peso é calculado com formula de femea
-    verificaPessoa(pessoa) == 1 ? peso = ((450.7*pessoa.altura)/(10)) : peso = ((400.7*pessoa.altura)/(10));
+    verificaPessoa(pessoa) == 1 ? (peso = ((450.7*pessoa.altura)/(10))) : (peso = ((400.7*pessoa.altura)/(10)) );
     
     // 1º ternario verifica se o sexo é 1 imprimindo macho caso contrario printa que é femea
     verificaPessoa(pessoa) == 1 ? printf("\nSexo: %s", "Macho") : printf("\nSexo: %s", "Fêmea");
