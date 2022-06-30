@@ -36,7 +36,7 @@ sPessoa lerPessoa(){
   return pessoa;
 }
 
-// retorna macho, fêmea, invalido =>  1, 2, 0
+// retorna Masculino, Femino, invalido =>  1, 2, 0
 int verificaPessoa(sPessoa pessoa){
   switch (pessoa.sexo){
   case 'M':
@@ -57,25 +57,24 @@ int verificaPessoa(sPessoa pessoa){
 //imprimi dados da pessoa
 void imprimirPessoa(sPessoa pessoa){
   
-  float peso;
   printf("\nAltura pessoa: %.2f", pessoa.altura);
   
   // verifica se o sexo foi nulo/0 se sim da uma mensagem de erro e sai
   if( verificaPessoa(pessoa) == 0 ){
     printf("%s", "\nErro: sexo invalido");
   }else{
-    // verifica é macho caso sim retorna peso com formula de macho caso contrario peso é calculado com formula de femea
-    verificaPessoa(pessoa) == 1 ? (peso = ((450.7*pessoa.altura)/(10))) : (peso = ((400.7*pessoa.altura)/(10)) );
+    // verifica é Masculino caso sim retorna peso com formula de Masculino caso contrario peso é calculado com formula de Femino
+    verificaPessoa(pessoa) == 1 ? (pessoa.peso = ((450.7*pessoa.altura)/(10))) : (pessoa.peso = ((400.7*pessoa.altura)/(10)) );
     
-    // 1º ternario verifica se o sexo é 1 imprimindo macho caso contrario printa que é femea
-    verificaPessoa(pessoa) == 1 ? printf("\nSexo: %s", "Macho") : printf("\nSexo: %s", "Fêmea");
+    // 1º ternario verifica se o sexo é 1 imprimindo Masculino caso contrario printa que é Femino
+    verificaPessoa(pessoa) == 1 ? printf("\nSexo: %s", "Masculino") : printf("\nSexo: %s", "Femino");
 
     // Imprimir peso
-    printf("\nPeso: %.1f", peso);
+    printf("\nPeso: %.1f", pessoa.peso);
   }
   
   //fazer tudo que tava em cima em uma só linha usando operador ternário
-  //verificaPessoa(pessoa) == 0 ? printf("%s", "\nErro: sexo invalido") : verificaPessoa(pessoa) == 1 ? printf("\nSexo: %s\nPeso: %.1f", "Macho", ( (450.7*pessoa.altura)/(10) ) ) : printf("\nSexo: %s\nPeso: %.1f", "Fêmea", ( (400.7*pessoa.altura)/(10) ) );
+  //verificaPessoa(pessoa) == 0 ? printf("%s", "\nErro: sexo invalido") : verificaPessoa(pessoa) == 1 ? printf("\nSexo: %s\nPeso: %.1f", "Masculino", ( (450.7*pessoa.altura)/(10) ) ) : printf("\nSexo: %s\nPeso: %.1f", "Femino", ( (400.7*pessoa.altura)/(10) ) );
 }
 
 int main(){
