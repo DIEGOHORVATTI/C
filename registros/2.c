@@ -29,6 +29,8 @@ sFichaUser lerUser(){
   printf("Sexo: %s", user.sexo);
   printf("Data de Nacimento: %s", user.dataNacimento);
   printf("Idade: %d", user.idade);
+
+  return (user);
 }
 
 int main(){

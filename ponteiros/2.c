@@ -6,6 +6,8 @@ int main(){
   char *p_char;
   float *p_float;
   double *p_double;
+  
+  printf("--------------Bytes--------------\n\n");
 
   printf("Tamanho int: %d", sizeof(int));
   printf("\nTamanho char: %d", sizeof(char));

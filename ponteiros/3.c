@@ -9,6 +9,8 @@ int main(){
     printf("%s", palavra);
   */
 
+  printf("Vetor é um ponteiro\n\n");
+
   printf("%p\n", palavra);
   printf("%p\n", &palavra);
   printf("%p\n", &palavra[0]);

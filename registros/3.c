@@ -39,6 +39,8 @@ sFichaUser lerUser(){
   printf("Data de Nacimento: %s", user.dataNacimento);
   printf("Apelido: %s", user.nick.apelido);
   printf("cpf: %d", user.cpf);
+
+  return( user );
 }
 
 int main(){
