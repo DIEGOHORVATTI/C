@@ -1,13 +1,9 @@
 /*
-  Escreva um algoritmo que lê uma matriz M(5,5) e 
-  calcula as somas:
-  da linha 4 de M.
-  da coluna 2 de M.
-  da diagonal principal.
-  da diagonal secundária.
-  de todos os elementos da matriz.
-  Escreva estas somas e a matriz.
+  Faça a entrada dos valores para uma matriz de tamanho (4x5) de valores inteiros. 
+  Em seguida, encontre e imprima a somatória de cada uma das colunas da matriz. Ao final, imprima
+  também a somatória de todas as colunas.
 */
+
 #include <stdio.h> 
 #include <stdlib.h>
 #include <time.h>
