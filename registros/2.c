@@ -30,7 +30,7 @@ sFichaUser lerUser(){
   printf("Data de Nacimento: %s", user.dataNacimento);
   printf("Idade: %d", user.idade);
 
-  return (user);
+  return(user);
 }
 
 int main(){
