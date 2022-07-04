@@ -14,7 +14,7 @@
 #define TAM_NOTAS 4
 #define TAM_MEDIA 6
 
-int notas( float vet_notas[TAM_NOTAS] ){
+int notas( float vet_notas[] ){
 
   float nota, acumulador_soma;
   nota=acumulador_soma=0;
@@ -23,6 +23,7 @@ int notas( float vet_notas[TAM_NOTAS] ){
 
     printf("Nota[%d]: ", i+1);
     scanf("%f", &nota);
+    getchar(); // limpar buffer do teclado
     vet_notas[i] = nota;
     acumulador_soma += nota;
   }
@@ -39,8 +40,8 @@ int main(void){
   float vet_[TAM_NOTAS], media;
   char teclado;
 
-  for (int i = 0; i < TAM_NOTAS; i++){
-    
+  do{
+
     printf("\n----------| Cadastrar Aluno |----------");
     printf("\nDeseja fazer novo calculo S/N: ");
     scanf("%c", &teclado);
@@ -74,7 +75,8 @@ int main(void){
       return (0);
       break;
     }
-  }
+
+  } while(teclado == 's' || teclado == 'S');
 
   return (0);
 }
