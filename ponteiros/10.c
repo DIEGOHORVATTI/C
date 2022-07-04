@@ -13,7 +13,10 @@ int main(){
   printf("\n\nEndereço de B: %p \nConteudo de B: %p", &B, B);
 
   printf("\n\nConteudo apontado por B: %d", *B);
-  printf("\nConteudo apontado por C: %d", *C);
+
+  printf("\n\nEndereço de C: %p \nConteudo de C: %p", &C, *C);
+
+  printf("\n\nConteudo apontado por C: %d", **C);
 
   return 0;
 }
