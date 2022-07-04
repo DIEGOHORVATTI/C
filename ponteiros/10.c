@@ -1,18 +1,19 @@
 #include <stdio.h>
 
-// se usa o '*' qunado cria,os a variavel ponteiro e
-// quando buscamos o conteudo apontado
+// ponteiro de ponteiro
 
 int main(){
 
-  int A=10, *B;
+  int A=10, *B, **C;
 
   B = &A;
+  C = &B;
 
   printf("\nEndereço de A: %p \nConteudo de A: %d", &A, A);
   printf("\n\nEndereço de B: %p \nConteudo de B: %p", &B, B);
 
   printf("\n\nConteudo apontado por B: %d", *B);
+  printf("\nConteudo apontado por C: %d", *C);
 
   return 0;
 }
