@@ -36,17 +36,15 @@ int main(){
   //a)
   if ( 2*4==24/3 ) 
      printf("%d\n", 2*4); 
-
-  
-  printf("\n\n------------------\n\n")
+  printf("\n\n------------------\n\n");
 
 
   //a)
   int A = 2;
   int B = 7;
-  float C = 3.5
+  float C = 3.5;
 
-  printf("%d\n", B==A*C)
+  printf("%d\n", B==A*C);
   
   return 0;
 }
