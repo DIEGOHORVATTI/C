@@ -21,7 +21,7 @@ int notas( float vet_notas[] ){
 
   for(int i=0; i < TAM_NOTAS; i++){
 
-    printf("Nota[%d]: ", i+1);
+    printf(" Nota[%d]: ", i+1);
     scanf("%f", &nota);
     getchar(); // limpar buffer do teclado
     vet_notas[i] = nota;
@@ -32,21 +32,23 @@ int notas( float vet_notas[] ){
 }
 
 void verificaMedia( float media ){
-  media >= TAM_MEDIA ? printf("\nAluno Aprovado") : printf("\nAluno Reprovado");
+  media >= TAM_MEDIA ? printf("\n Aluno Aprovado") : printf("\n Aluno Reprovado");
 }
 
 int main(void){
 
   float vet_[TAM_NOTAS], media;
   char teclado;
+  int x=0; // quntidade de alunos
 
   do{
 
     printf("\n----------| Cadastrar Aluno |----------");
-    printf("\nDeseja fazer novo calculo S/N: ");
+    x == 0 ? printf("\n\n Seja bem vindo ao sistema!\n\n Deseja fazer um calculo S/N: ") : printf("\n\n Deseja fazer novo calculo S/N: ");
     scanf("%c", &teclado);
     printf("\n");
     getchar(); // limpar buffer do teclado
+    x++;
 
     switch (teclado){
     case 'S':
@@ -56,10 +58,10 @@ int main(void){
       media = notas(vet_);
 
       // printando notas
-      for (int i = 0; i < TAM_NOTAS; i++){ printf("\nNota[%d]: %.1f", i + 1, vet_[i]); }
+      for (int i = 0; i < TAM_NOTAS; i++){ printf("\n Nota[%d]: %.1f", i + 1, vet_[i]); }
       
       //printando média
-      printf("\n\nNota média: %.1f", media);
+      printf("\n\n Nota média: %.1f", media);
 
       //printando verificação de aprovação
       verificaMedia(media);
@@ -68,10 +70,10 @@ int main(void){
       break;
     case 'N':
     case 'n':
-      printf("\nFinal de execução do programa");
+      printf("\n Final de execução do programa");
       break;
     default:
-      printf("\nValor lido invalido\n");
+      printf("\n Valor lido invalido\n");
       return (0);
       break;
     }

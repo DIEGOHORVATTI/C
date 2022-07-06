@@ -17,7 +17,7 @@
 
 int somaMatriz(int j, int matriz[LINHAS][COLUNAS]){
   int soma=0;
-  for (size_t i = 0; i < LINHAS; i++){
+  for (int i=0; i < LINHAS; i++){
     soma+= matriz[i][j];
   }
   
@@ -26,7 +26,9 @@ int somaMatriz(int j, int matriz[LINHAS][COLUNAS]){
 
 int main(void){
 
-  int soma_matriz=0;
+  int soma_matriz, soma_matriz_completa;
+  soma_matriz=soma_matriz_completa=0;
+
   srand(time(NULL)); //seed semente 
 
   /*Matriz quadrada => A[n]x[m]
@@ -38,7 +40,7 @@ int main(void){
   int matriz[LINHAS][COLUNAS];
   for ( int j=0; j < COLUNAS; j++ ){
     for ( int i=0; i < LINHAS; i++ ){
-      matriz[i][j] = rand() % 100;
+      matriz[i][j] = 10+(rand() % 40);
     }
   }
 
@@ -51,13 +53,14 @@ int main(void){
     printf("\n");
   }
   
-
+  //soma das colunas
   for (int i=0; i < COLUNAS; i++){
-    printf("\n soma matriz[%d]: %d", i+1, somaMatriz(i, matriz));
+    printf("\n soma coluna[%d]: %d", i+1, somaMatriz(i, matriz));
     soma_matriz = somaMatriz(i, matriz);
+    soma_matriz_completa += soma_matriz;
   }
 
-  printf("\n\n Soma Colunas: %d\n", soma_matriz);
+  printf("\n\n Soma Colunas: %d\n", soma_matriz_completa);
 
   return(0);
 }
