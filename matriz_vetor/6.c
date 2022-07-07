@@ -20,7 +20,6 @@
 #define cianoclaro(texto) printf("\33[1;36m %d\33[0m", texto)
 #define branco(texto) printf("\33[1;37m %d\33[0m", texto)
 
-
 //matriz kernel ou matriz conjugada ou matriz transposta
 
 int main(){
