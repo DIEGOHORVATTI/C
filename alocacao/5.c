@@ -13,5 +13,10 @@ int main(){
     mat[i] = malooc();
   }
 
+  for (int i = 0; i < 4; i++)
+  {
+    mat[i] = malooc();
+  }
+
   return 0;
 }
