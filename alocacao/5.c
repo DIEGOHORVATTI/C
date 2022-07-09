@@ -13,17 +13,18 @@ int main(){
   mat = malloc(4 * sizeof(int*));
 
   for(int i = 0; i < 4; i++)
-    mat[i] = malloc(3 * sizeof(int));
+    mat[i] = malloc(4 * sizeof(int));
 
   for (int j = 0; j < 4; j++){
     for (int i = 0; i < 4; i++)
-      mat[i][j] = 10 +(rand() % 40);
+      mat[j][i] = 10 +(rand() % 40);
   }
 
   for (int j = 0; j < 4; j++){
-    for (int i = 0; i < 4; i++)
-      printf(" %d", mat[i][j]);
-    printf("%n");
+    for (int i = 0; i < 4; i++){
+      printf(" %d", mat[j][i]);
+    }
+    printf("\n");
   }
 
   return(0);
