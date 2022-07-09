@@ -16,10 +16,3 @@
 #define azulclaro(texto) printf("\33[1;34m %d\33[0m", texto)
 #define roxoclaro(texto) printf("\33[1;35m %d\33[0m", texto)
 #define cianoclaro(texto) printf("\33[1;36m %d\33[0m", texto)
-
-int main(){
-
-  roxo(66666);
-  
-  return 0;
-}
