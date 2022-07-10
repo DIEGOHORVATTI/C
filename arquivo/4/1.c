@@ -17,17 +17,22 @@
 
 void escrever(char arquivo[]) {
   
-  FILE *file = fopen(arquivo, "w" );
+  FILE *file = fopen(arquivo, "w+" );
   char texto[500];
 
   if (file){
-
     printf("\n Digite uma frase: ");
     scanf("%500[^\n]", texto);
     
-    while( (strlen(texto)) < 1 ){
-      printf("\n Melor que 1");
+    while( strlen(texto) > 1 ){
+      fputs(texto, file);
+      
+      printf("\n Digite uma frase: ");
+      getchar();
+      scanf("%500[^\n]", texto);
+
     }
+    fclose(file);
     
   }else { printf("\n Arquivo não encontrado!"); }
 
