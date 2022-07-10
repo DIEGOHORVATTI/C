@@ -12,21 +12,21 @@ typedef struct{
 
 int main(){
   
-  // sEstudante estudante[3];
+  sEstudante estudante[3];
 
-  // printf("\n---| Digite a nome e nota d estudante |---\n");
+  printf("\n---| Digite a nome e nota d estudante |---\n");
 
-  // for (int i=0; i < MAX_ESTUDANTES; i++){
-  //   //printf("\nDigite nome estudante[%d]: ", i);
-  //   //fgets( estudante[i].nomes, 30, stdin);
+  for (int i=0; i < MAX_ESTUDANTES; i++){
+    //printf("\nDigite nome estudante[%d]: ", i);
+    //fgets( estudante[i].nomes, 30, stdin);
 
-  //   printf("\nDigite nota estudante[%d]: ", i);
-  //   scanf("%f", estudante[i].nota);
-  // }
+    printf("\nDigite nota estudante[%d]: ", i);
+    scanf("%f", estudante[i].nota);
+  }
 
-  // for (int i = 0; i < MAX_ESTUDANTES; i++){
-  //   printf("\n%s\t%.2f", estudante[i].nomes, estudante[i].nota);
-  // }
+  for (int i = 0; i < MAX_ESTUDANTES; i++){
+    printf("\n%s\t%.2f", estudante[i].nomes, estudante[i].nota);
+  }
 
   return(0);
 }
