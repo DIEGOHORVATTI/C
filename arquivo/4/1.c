@@ -30,8 +30,8 @@ void escrever(char arquivo[]) {
       printf("\n Digite uma frase: ");
       getchar();
       scanf("%500[^\n]", texto);
-
     }
+    
     fclose(file);
     
   }else { printf("\n Arquivo não encontrado!"); }
