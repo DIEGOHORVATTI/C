@@ -34,7 +34,16 @@ void escrever(char arquivo[]) {
 }
 
 void imprimir(char arquivo[]){
-  system("cat ./texto.txt");
+
+  FILE *file = fopen(arquivo, "r");
+
+  printf("\n Texto lido do arquivo: ");
+    while( !(feof(file)) ){
+      letra = fgetc(file);
+      printf("%c", letra);
+    }
+
+  fclose(file);
 }
 
 int main() {
