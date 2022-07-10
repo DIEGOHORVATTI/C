@@ -30,7 +30,11 @@ int main(){
       scanf("%c", &letra); // lê o próximo caracter do buffer do teclado
     }
     
-    rewind(file); 
+    rewind(file); //voltar ponteiro para inicio do arquivo 
+    
+    while (){
+      letra = fgetc(file);
+    }
 
     fclose(file);
   
