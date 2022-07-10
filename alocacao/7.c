@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-// inverter string
+ // inverter string
 
 void inverter(char vet[]){
   int fim, aux, tam = strlen(vet);
