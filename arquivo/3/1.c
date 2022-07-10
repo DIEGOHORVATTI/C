@@ -22,7 +22,7 @@ void escrever(char f[]) {
   char letra;
 
   if(file) {
-    printf("\nDigite um texto e pressione ENTER ao finalizar!");
+    printf("\n Digite texto: ");
     scanf("%c", &letra);
     while(letra != '\n') {
       fputc(letra, file);
@@ -30,7 +30,7 @@ void escrever(char f[]) {
     }
     fclose(file);
   } else
-    printf("\nERRO ao abrir arquivo!\n");
+    printf("\n ERRO ao abrir arquivo!\n");
 }
 
 void ler(char f[]) {
@@ -38,7 +38,7 @@ void ler(char f[]) {
   char letra;
 
   if(file){
-    printf("\n\tTexto lido do arquivo:\n");
+    printf("\n Texto lido do arquivo: ");
     while(!feof(file)) {
       letra = fgetc(file);
       printf("%c", letra);
@@ -47,7 +47,7 @@ void ler(char f[]) {
     fclose(file);
   }
   else
-    printf("\nERRO ao abrir arquivo!\n");
+    printf("\n ERRO ao abrir arquivo!\n");
 }
 
 int main() {
