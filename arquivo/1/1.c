@@ -19,15 +19,20 @@ int main(){
 
   if(file != NULL){
     
-    // lendo e escrevendo vários caracteress
     printf("\nDigite um texto: ");
-    
-    scanf("%[^\n]", &letra);
-    fputc(letra, file);
 
+    // lendo e escrevendo vários caracteres
+    scanf("%c", &letra); // lê o primeiro caracter
+
+    while (letra != '\n'){                      
+      // enquanto letra for diferente do ENTER
+      fputc(letra, file);  // escreve letra no arquivo apontado por fila
+      scanf("%c", &letra); // lê o próximo caracter do buffer do teclado
+    }
+
+    fclose(file);
+  
   }else{ printf("\n Erro ao abri arquivo!"); }
-  
-  
   
   return 0;
 }
