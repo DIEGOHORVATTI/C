@@ -1,32 +1,40 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#define MAX_ESTUDANTES 3
+#include <time.h>
+#define MAX_MATRIZ 12
 
-/*
-  Foram digitadas três linhas, onde cada uma das linhas contém o nome e a nota de
-  um aluno. Escreva um programa que leia essas informações e monte uma tabela onde
-  a primeira coluna é o nome e a segunda coluna é a nota.
-*/
-
-typedef struct{
-  char nome[MAX_ESTUDANTES][50];
-  float nota;
-}sEstudante;
+// matriz dinamica com ponteiros
+// *(mat + i) -> acesar todos os indices do vetor
+// *(*(mat + i) + j) -> acesar todos os indices de todos os vetores sendo assim uma matriz
 
 int main(){
-  
-  sEstudante estudantes[MAX_ESTUDANTES];
+    
+  srand(time(NULL));
+    
+  int **mat;
 
-  for (int i = 0; i < MAX_ESTUDANTES; i++){
-    printf(" Estudante[%d] [nome nota]: ", i+1);
-    scanf("%s%f", &estudantes[i].nome, &estudantes[i].nota);
+  mat = malloc(MAX_MATRIZ * sizeof(int*));
+
+  for(int i = 0; i < MAX_MATRIZ; i++){
+    mat[i] = malloc(MAX_MATRIZ * sizeof(int));
   }
 
-  printf("\n\tNome\tNota\n");
-  for (int i = 0; i < MAX_ESTUDANTES; i++){
-    printf("\t%s\t%.2f\n", estudantes[i].nome, estudantes[i].nota);
+  for (int j = 0; j < MAX_MATRIZ; j++){
+    for (int i = 0; i < MAX_MATRIZ; i++){
+      *(*(mat + i) + j) = 10+(rand() % 40);
+      //mat[j][i] = 10 + (rand() % 40);
+    }
   }
+
+  for (int j = 0; j < MAX_MATRIZ; j++){
+    for (int i = 0; i < MAX_MATRIZ; i++){
+      //printf(" %d", mat[j][i]);
+      printf(" %d", *(*(mat+i) + j) );
+    }
+    printf("\n");
+  }
+
+  free(mat);
 
   return(0);
 }
