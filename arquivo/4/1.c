@@ -25,9 +25,9 @@ void escrever(char arquivo[]) {
     printf("\n Digite uma frase: ");
     scanf("%500[^\n]", texto);
     
-    fputs(texto, file);
-
-    fclose(file);
+    while( (strlen(texto)) < 1 ){
+      printf("\n Melor que 1");
+    }
     
   }else { printf("\n Arquivo não encontrado!"); }
 
