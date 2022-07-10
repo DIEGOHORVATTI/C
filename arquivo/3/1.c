@@ -14,11 +14,26 @@ a+ -> leitura e escrita (adiciona ao final do arquivo)
 // ler arquivo
 // Organizando nosso código em procedimentos
 
-#include <stdio.h>
-#include <stdlib.h>
+void escrever(char arquivo[]) {
+  
+  FILE *file = fopen(arquivo, "w" );
+  char texto[500];
 
-void escrever(char f[]) {
-  printf("%s", f);
+  if (file){
+
+    printf("\n Digite uma frase: ");
+    scanf("%500[^\n]", texto);
+    
+    fputs(texto, file);
+
+    fclose(file);
+    
+  }else { printf("\n Arquivo não encontrado!"); }
+
+}
+
+void imprimir(char arquivo[]){
+  system("cat ./texto.txt");
 }
 
 int main() {
@@ -26,6 +41,8 @@ int main() {
   char nome[] = {"./texto.txt"};
 
   escrever(nome);
+
+  imprimir(nome);
 
   return 0;
 }
