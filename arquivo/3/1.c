@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /*
 w  -> Escrita (cria o arquivo caso ele não exista)
