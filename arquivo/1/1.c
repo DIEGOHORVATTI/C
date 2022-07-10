@@ -22,13 +22,8 @@ int main(){
     // lendo e escrevendo vários caracteress
     printf("\nDigite um texto: ");
     
-    scanf("%c", &letra); // lê o primeiro caracter
-
-    while (letra != '\n'){                      
-      // enquanto letra for diferente do ENTER
-      fputc(letra, file);  // escreve letra no arquivo apontado por fila
-      scanf("%c", &letra); // lê o próximo caracter do buffer do teclado
-    }
+    scanf("%[^\n]", &letra);
+    fputc(letra, file);
 
   }else{ printf("\n Erro ao abri arquivo!"); }
   
