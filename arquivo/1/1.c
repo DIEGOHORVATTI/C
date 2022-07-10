@@ -15,7 +15,24 @@ int main(){
   FILE *file;
   char letra;
 
-  file = fopen("./1.txt", "w");
+  file = fopen("./texto.txt", "w+");
+
+  if(file != NULL){
+    
+    // lendo e escrevendo vários caracteress
+    printf("\nDigite um texto: ");
+    
+    scanf("%c", &letra); // lê o primeiro caracter
+
+    while (letra != '\n'){                      
+      // enquanto letra for diferente do ENTER
+      fputc(letra, file);  // escreve letra no arquivo apontado por fila
+      scanf("%c", &letra); // lê o próximo caracter do buffer do teclado
+    }
+
+  }else{ printf("\n Erro ao abri arquivo!"); }
+  
+  
   
   return 0;
 }
