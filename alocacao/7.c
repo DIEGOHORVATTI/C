@@ -17,7 +17,6 @@ void inverter(char vet[]){
 
 }
 
-
 char* inverter_2(char vet[]){
   int i, fim, aux, tam = strlen(vet);
   char *novo = malloc( (tam+1) * sizeof(char) );
