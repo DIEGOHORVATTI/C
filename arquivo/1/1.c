@@ -10,6 +10,8 @@
   a+ -> leitura e escrita (adiciona ao final do arquivo)
 */
 
+// escrever arquivo
+
 int main(){
 
   FILE *file;

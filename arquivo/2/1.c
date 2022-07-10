@@ -10,6 +10,9 @@
   a+ -> leitura e escrita (adiciona ao final do arquivo)
 */
 
+// escrever arquivo
+// ler arquivo
+
 int main(){
 
   FILE *file;
@@ -19,7 +22,7 @@ int main(){
 
   if(file != NULL){
     
-    printf("\nDigite um texto: ");
+    printf("\n Digite um texto: ");
 
     // lendo e escrevendo vários caracteres
     scanf("%c", &letra); // lê o primeiro caracter
@@ -32,8 +35,10 @@ int main(){
     
     rewind(file); //voltar ponteiro para inicio do arquivo 
     
-    while (){
+    printf("\n Texto lido do arquivo: ");
+    while( !(feof(file)) ){
       letra = fgetc(file);
+      printf("%c", letra);
     }
 
     fclose(file);
