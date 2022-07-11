@@ -14,12 +14,12 @@
 // escrever arquivo
 // ler arquivo
 // Organizando nosso código em procedimentos
-// fputs escrever no arquivo
-// feof(file) retorna true se fim do arquivo for encontrado
-// !(feof(file)) nega o fim do arquivo o percorrendo até o final
 
+// fprintf escrever no arquivo
+// ponteiro de arquivo, typos de dados, dados 
 
 void escrever(char f[]) {
+
   FILE *file = fopen(f, "w");
   char nome[100];
   int opcao, idade;
@@ -27,14 +27,25 @@ void escrever(char f[]) {
 
   if(file) {
       do{
-        printf("Digite nome, idade e altura: ");
-        scanf("%99[^\n]%d%f", nome, &idade, &altura);
+        printf("\n Digite nome: ");
+        scanf("%99[^\n]", nome);
+
+        printf(" Digite idade: ");
+        scanf("%i", &idade);
+
+        printf(" Digite altura: ");
+        scanf("%f", &altura);
+
         fprintf(file, "%s %d %.2f\n", nome, idade, altura);
-        printf("\nDigite 1 para inserir outro registro. ");
+        printf("\n Inserir novo registro [0]não, [1]sim: ");
         scanf("%d", &opcao);
-        scanf("%c");
+
+        getchar();
+
       }while(opcao == 1);
+
       fclose(file);
+
   }else{
     printf("\n ERRO ao abrir arquivo!\n");
   }
