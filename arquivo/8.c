@@ -16,33 +16,41 @@
 // Organizando nosso código em procedimentos
 
 // fprintf escrever no arquivo
-// ponteiro de arquivo, typos de dados, dados 
+// ponteiro de arquivo, typos de dados, dados
+
+// fscanf ler arquivo
+// ponteiro de arquivo, typos de dados, dados
+
+typedef struct{
+  char nome[100];
+  int opcao, idade;
+  float altura;
+}sPessoa;
 
 void escrever(char f[]) {
 
   FILE *file = fopen(f, "w");
-  char nome[100];
-  int opcao, idade;
-  float altura;
+
+  sPessoa pessoa;
 
   if(file) {
       do{
         printf("\n Digite nome: ");
-        scanf("%99[^\n]", nome);
+        scanf("%99[^\n]", pessoa.nome);
 
         printf(" Digite idade: ");
-        scanf("%i", &idade);
+        scanf("%i", &pessoa.idade);
 
         printf(" Digite altura: ");
-        scanf("%f", &altura);
+        scanf("%f", &pessoa.altura);
 
-        fprintf(file, "%s %d %.2f\n", nome, idade, altura);
+        fprintf(file, "%s %d %.2f\n", pessoa.nome, pessoa.idade, pessoa.altura);
         printf("\n Inserir novo registro [0]não, [1]sim: ");
-        scanf("%d", &opcao);
+        scanf("%d", &pessoa.opcao);
 
         getchar();
 
-      }while(opcao == 1);
+      }while(pessoa.opcao == 1);
 
       fclose(file);
 
@@ -53,16 +61,25 @@ void escrever(char f[]) {
 
 void ler(char arquivo[]){
 
-  FILE *file = fopen(arquivo, "w");
+  FILE *file = fopen(arquivo, "r");
+
+  sPessoa pessoa;
 
   if(file){
 
+    printf("\n Dados lidos do arquivo\n");
+
+    // lendo nome, idade e altura de um arquivo texto com a função fscanf
+    for (int i = 0; fscanf(file, "%s %d %.2f", pessoa.nome, &pessoa.idade, &pessoa.altura) != -1; i++){
+      fscanf(file, "%s %d %.2f", pessoa.nome, &pessoa.idade, &pessoa.altura);
+      printf("\n [%d] {\n  Nome: %s\n  Idade: %d\n  Altura: %.2f\n }\n", i + 1, pessoa.nome, pessoa.idade, pessoa.altura);
+    }
     
-    
+    fclose(file);
   }else{
     printf("\n ERRO ao abrir arquivo!\n");
   }
-
+  
 }
 
 int main() {
@@ -70,6 +87,8 @@ int main() {
   char nome[] = {"./texto.txt"};
 
   escrever(nome);
+
+  ler(nome);
 
   return 0;
 }
