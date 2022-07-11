@@ -19,58 +19,32 @@
 // !(feof(file)) nega o fim do arquivo o percorrendo até o final
 
 
-void escrever(char f[]){
+void escrever(char f[]) {
   FILE *file = fopen(f, "w");
-  char texto[500];
+  char nome[100];
+  int opcao, idade;
+  float altura;
 
-  if (file){
-
-    printf("\n [0] Digite uma frase: ");
-    scanf("%499[^\n]", texto);
-    getchar();
-
-    // Digite uma frase ou 1 caracter para finalizar
-    for(int i=0; strlen(texto) > 1; i++){
-
-      fputs(texto, file);
-      fputc('\n', file);
-
-      printf(" [%d] Digite uma frase: ", i+1);
-      scanf("%499[^\n]", texto);
-      getchar();
-    }
-    fclose(file);
-  }
-  else{
-    printf("\n ERRO ao abrir arquivo!\n");
-  }
-}
-
-void ler(char f[]){
-  FILE *file = fopen(f, "r");
-  char texto[500];
-
-  if (file){
-    printf("\n\tTexto lido do arquivo\n\n");
-
-    for( int i=0; !feof(file); i++){
-      if (fgets(texto, 499, file)){
-        printf(" [%d] --> %s", i, texto);
-      }
-    }
-
-    fclose(file);
+  if(file) {
+      do{
+        printf("Digite nome, idade e altura: ");
+        scanf("%99[^\n]%d%f", nome, &idade, &altura);
+        fprintf(file, "%s %d %.2f\n", nome, idade, altura);
+        printf("\nDigite 1 para inserir outro registro. ");
+        scanf("%d", &opcao);
+        scanf("%c");
+      }while(opcao == 1);
+      fclose(file);
   }else{
     printf("\n ERRO ao abrir arquivo!\n");
   }
 }
 
-int main(){
+int main() {
 
   char nome[] = {"./texto.txt"};
 
   escrever(nome);
-  ler(nome);
 
   return 0;
 }
