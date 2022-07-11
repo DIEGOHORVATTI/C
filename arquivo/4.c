@@ -14,6 +14,7 @@
 // escrever arquivo
 // ler arquivo
 // Organizando nosso código em procedimentos
+// fputs escrever no arquivo
 
 void escrever(char arquivo[]) {
   
@@ -25,9 +26,10 @@ void escrever(char arquivo[]) {
     scanf("%500[^\n]", texto);
     
     while( strlen(texto) > 1 ){
+      fputc('\n', file);
       fputs(texto, file);
-      
-      printf("\n Digite uma frase: ");
+
+      printf(" Digite uma frase: ");
       getchar();
       scanf("%500[^\n]", texto);
     }
