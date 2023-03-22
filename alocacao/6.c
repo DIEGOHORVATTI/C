@@ -22,13 +22,11 @@ int main(){
   for (int j = 0; j < MAX_MATRIZ; j++){
     for (int i = 0; i < MAX_MATRIZ; i++){
       *(*(mat + i) + j) = 10+(rand() % 40);
-      //mat[j][i] = 10 + (rand() % 40);
     }
   }
 
   for (int j = 0; j < MAX_MATRIZ; j++){
     for (int i = 0; i < MAX_MATRIZ; i++){
-      //printf(" %d", mat[j][i]);
       printf(" %d", *(*(mat+i) + j) );
     }
     printf("\n");
